@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App18"
+             x:Class="App18.MainPage">
+
+    <StackLayout>
+
+        <SearchBar x:Name="sb_search" 
+                   Placeholder="Search" 
+                   TextChanged="Sb_search_TextChanged"
+                   SearchButtonPressed="Sb_search_SearchButtonPressed"/>
+
+        <ListView x:Name="exampleListView" 
+                  ItemSelected="OnListViewSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid RowSpacing="0" ColumnSpacing="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Text="{Binding Name}"/>
+                                <Label Grid.Column="1" Text="{Binding Id}"/>
+                                <Label Grid.Column="2" Text="{Binding Location}"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Button x:Name="btnSearch" 
+                Text="조회"
+                Clicked="BtnSearch_Clicked"/>
+    </StackLayout>
+</ContentPage>

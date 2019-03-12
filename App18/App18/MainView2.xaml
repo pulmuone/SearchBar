@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dxGrid="clr-namespace:DevExpress.Mobile.DataGrid;assembly=DevExpress.Mobile.Grid.v18.2"
+             x:Class="App18.MainView2">
+
+    <Grid RowSpacing="0" ColumnSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition> <!--DevExpress-->
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition Width="100"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <!--ColumnsAutoWidth="False"  가로 스크롤 사용하려면 False-->
+        <dxGrid:GridControl x:Name="grid" 
+                                Grid.Row="1" 
+                                Grid.ColumnSpan="3"
+						        SortMode="Single" 
+                                RowHeight="50"
+                                ColumnsAutoWidth="False" 
+                                ColumnHeadersHeight="40"
+                                AllowEditRows="False"
+                                AllowDeleteRows="False"
+                                AllowGroup="False"
+                                AllowGroupCollapse="False"
+                                AllowResizeColumns="True"
+                                AllowSort="True"
+                                IsRowCellMenuEnabled ="False"
+                                AllowHorizontalScrollingVirtualization="False"
+                                AutoGenerateColumnsMode="None"
+                                IsColumnChooserEnabled="False"
+                                IsColumnMenuEnabled="False"
+                                IsPullToRefreshEnabled="True">
+            <dxGrid:GridControl.Columns>
+                <dxGrid:TemplateColumn FieldName="Name" Width="90" ContentAlignment="Start" IsReadOnly="True">
+                    <dxGrid:TemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <Label Text="이름" HorizontalTextAlignment="Center"  VerticalTextAlignment="Center" Font="Bold"/>
+                        </DataTemplate>
+                    </dxGrid:TemplateColumn.HeaderTemplate>
+                    <dxGrid:TemplateColumn.DisplayTemplate>
+                        <DataTemplate>
+                            <Label Text="{Binding Value}"  LineBreakMode="NoWrap" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                        </DataTemplate>
+                    </dxGrid:TemplateColumn.DisplayTemplate>
+                </dxGrid:TemplateColumn>
+
+            </dxGrid:GridControl.Columns>
+        </dxGrid:GridControl>
+
+    </Grid>
+</ContentPage>
