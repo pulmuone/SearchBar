@@ -18,6 +18,9 @@ namespace App18.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(savedInstanceState);
+
+            DevExpress.Mobile.Forms.Init();
+
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
         }
