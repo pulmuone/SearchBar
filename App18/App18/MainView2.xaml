@@ -36,10 +36,29 @@
                                 IsColumnMenuEnabled="False"
                                 IsPullToRefreshEnabled="True">
             <dxGrid:GridControl.Columns>
-                <dxGrid:TemplateColumn FieldName="Name" Width="90" ContentAlignment="Start" IsReadOnly="True">
+
+                <dxGrid:TemplateColumn FieldName="Name" Width="200" ContentAlignment="Start" IsReadOnly="True" >
                     <dxGrid:TemplateColumn.HeaderTemplate>
                         <DataTemplate>
+                            
                             <Label Text="이름" HorizontalTextAlignment="Center"  VerticalTextAlignment="Center" Font="Bold"/>
+                        
+                        </DataTemplate>
+                    </dxGrid:TemplateColumn.HeaderTemplate>
+                    <dxGrid:TemplateColumn.DisplayTemplate>
+                        <DataTemplate>
+                            
+                            <Label Text="{Binding Value}"  LineBreakMode="NoWrap" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                        
+                        </DataTemplate>
+                    </dxGrid:TemplateColumn.DisplayTemplate>
+                </dxGrid:TemplateColumn>
+
+
+                <dxGrid:TemplateColumn FieldName="Id" Width="200" ContentAlignment="Start" IsReadOnly="True" >
+                    <dxGrid:TemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <Label Text="Id" HorizontalTextAlignment="Center"  VerticalTextAlignment="Center" Font="Bold"/>
                         </DataTemplate>
                     </dxGrid:TemplateColumn.HeaderTemplate>
                     <dxGrid:TemplateColumn.DisplayTemplate>
@@ -48,6 +67,21 @@
                         </DataTemplate>
                     </dxGrid:TemplateColumn.DisplayTemplate>
                 </dxGrid:TemplateColumn>
+
+
+                <dxGrid:TemplateColumn FieldName="Location" Width="200" ContentAlignment="Start" IsReadOnly="True">
+                    <dxGrid:TemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <Label Text="위치" HorizontalTextAlignment="Center"  VerticalTextAlignment="Center" Font="Bold"/>
+                        </DataTemplate>
+                    </dxGrid:TemplateColumn.HeaderTemplate>
+                    <dxGrid:TemplateColumn.DisplayTemplate>
+                        <DataTemplate>
+                            <Label Text="{Binding Value}"  LineBreakMode="NoWrap" HorizontalTextAlignment="Start" VerticalTextAlignment="Center"/>
+                        </DataTemplate>
+                    </dxGrid:TemplateColumn.DisplayTemplate>
+                </dxGrid:TemplateColumn>
+
 
             </dxGrid:GridControl.Columns>
         </dxGrid:GridControl>

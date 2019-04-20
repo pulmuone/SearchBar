@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.Mobile.DataGrid.Theme;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,11 +12,12 @@ namespace App18
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class MainView2 : ContentPage
-	{
+	{   
         List<UserModel> items = new List<UserModel>();
         public MainView2 ()
 		{
 			InitializeComponent ();
+            ThemeManager.ThemeName = Themes.Light;
 
             items.Clear();
 
@@ -25,5 +27,10 @@ namespace App18
 
             this.grid.ItemsSource = items;
         }
-	}
+
+        private void Grid_RowDoubleTap(object sender, DevExpress.Mobile.DataGrid.RowDoubleTapEventArgs e)
+        {
+
+        }
+    }
 }
